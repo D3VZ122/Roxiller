@@ -8,6 +8,11 @@ const app = express();
 const prisma = new PrismaClient();
 
 app.use(cors());
+var count =1;
+app.use(()=>{
+  count++;
+  console.log("New Visitor"+count);
+});
 
 app.get("/seed", async (req, res) => {
   try {
